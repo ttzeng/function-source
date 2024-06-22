@@ -15,7 +15,13 @@ To query values of specific keys, pass only keys in the query string, the API en
 
 A special value `-` is reserved to request the API endpoint deleting the associated key from the database:
 
-    $ curl https://us-west1-ttzeng-gcp.cloudfunctions.net/redis-cloud/?model=-
+    $ curl https://us-west1-ttzeng-gcp.cloudfunctions.net/redis-cloud/?b=-
+    {}
+
+Path `/dump` can be used to list all key-value pairs in the database.
+
+    $ curl https://us-west1-ttzeng-gcp.cloudfunctions.net/redis-cloud/dump
+    {"a": "1", "c": "3"}
 
 Though `Redis.io` provides [a number of ways](https://redis.io/docs/latest/operate/rc/security/) to secure the databases, my tiny Redis database only uses the *Default user password* for data access control. Check out the `Public endpoint` and the `Default user password` of the database on the [Redis Cloud Console][5], then set up the environment variables `REDIS_HOST`, `REDIS_PORT`, and `REDIS_PASSWORD` while creating the Cloud Function.
 

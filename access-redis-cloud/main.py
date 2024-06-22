@@ -14,6 +14,13 @@ def access_redis_cloud(request):
     r = redis.Redis(connection_pool=redis_pool)
 
     queries = {}
+    if request.path == '/dump':
+        # Dump the entire database
+        for k in r.keys():
+            # Both keys and values got from Redis are bytes, must convert to strings
+            queries[k.decode('utf-8')] = r.get(k).decode('utf-8')
+        return json.dumps(queries)
+
     try:
         # Iterate (k,v) pairs in the query string embedded in the URL
         for k in request.args:
