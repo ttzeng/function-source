@@ -1,0 +1,7 @@
+# Google Functions Framework for Python
+# https://github.com/GoogleCloudPlatform/functions-framework-python
+functions-framework==3.*
+
+# LINE Message API SDK for Python
+# https://github.com/line/line-bot-sdk-python
+line-bot-sdk
