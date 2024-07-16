@@ -2,6 +2,10 @@
 # https://github.com/GoogleCloudPlatform/functions-framework-python
 functions-framework==3.*
 
+# Cloud Storage client library
+# https://cloud.google.com/python/docs/reference/storage/latest
+google-cloud-storage
+
 # LINE Message API SDK for Python
 # https://github.com/line/line-bot-sdk-python
 line-bot-sdk
